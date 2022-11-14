@@ -3,7 +3,7 @@
 # ------------------------------------------------------
 
 type Task {
-  id: Int!
+  id: ID!
   content: String!
   isCompleted: Boolean!
   createdAt: String!
@@ -11,10 +11,13 @@ type Task {
 
 type Query {
   tasks: [Task!]!
+  task(id: ID!): Task!
 }
 
 type Mutation {
   createTask(input: TaskInput!): Task!
+  deleteTask(id: ID!): Boolean!
+  updateTask(id: ID!, input: TaskInput!): Task!
 }
 
 input TaskInput {

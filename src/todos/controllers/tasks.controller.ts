@@ -48,9 +48,9 @@ export class TasksController {
     return res.status(HttpStatus.OK).json(result);
   }
 
-  @Delete(':id')
-  async deleteTask(@Param('id') id: string, @Res() res: Response) {
-    const result = await this.tasksService.DeleteTask(id);
-    return res.status(HttpStatus.OK).json('삭제완료');
-  }
+  // @Delete(':id')
+  // async deleteTask(@Param('id') id: string, @Res() res: Response) {
+  //   const result = await this.tasksService.DeleteTask(id);
+  //   return res.status(HttpStatus.OK).json('삭제완료');
+  // }
 }

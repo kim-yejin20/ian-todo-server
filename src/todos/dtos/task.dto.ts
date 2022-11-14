@@ -1,9 +1,18 @@
-import { Field, Int, ObjectType } from '@nestjs/graphql';
+import { Field, ID, ObjectType } from '@nestjs/graphql';
+
+// @ObjectType('User')
+// export class UserDto {
+//   @Field()
+//   id: string;
+
+//   @Field()
+//   username: string;
+// }
 
 @ObjectType('Task')
 export class TaskDto {
-  @Field(() => Int)
-  id: number;
+  @Field(() => ID)
+  id: string;
 
   @Field(() => String)
   content: string;
@@ -13,4 +22,10 @@ export class TaskDto {
 
   @Field(() => String)
   createdAt: string;
+
+  // @Field(() => String)
+  // secretMessage: string;
+
+  // @Field(() => UserDto)
+  // user: UserDto;
 }

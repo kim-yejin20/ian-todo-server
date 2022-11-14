@@ -1,7 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { Task } from '../models/task.model';
 import { CreateTaskDto } from '../dtos/create-task.dto';
-import { DBError } from 'objection';
 import { CommentsService } from './comments.service';
 
 @Injectable()
@@ -10,6 +9,10 @@ export class TasksService {
 
   async findTasks() {
     return await Task.query().orderBy('id', 'DESC');
+  }
+
+  async findTask(id: string) {
+    return await Task.query().findById(id);
   }
 
   async createTask(input: CreateTaskDto) {
